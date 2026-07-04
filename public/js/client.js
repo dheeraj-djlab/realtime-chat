@@ -9,11 +9,25 @@ const onlineList = document.getElementById('online-list');
 const onlineCount = document.getElementById('online-count');
 const typingIndicator = document.getElementById('typing-indicator');
 
+const joinOverlay = document.getElementById('join-overlay');
+const joinForm = document.getElementById('join-form');
+const joinNameInp = document.getElementById('joinNameInp');
+const appEl = document.getElementById('app');
+
 let myName = '';
-while (!myName) {
-  myName = (prompt('Enter your name to join the chat') || '').trim();
-}
-socket.emit('new-user-joined', myName);
+
+joinForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = joinNameInp.value.trim();
+  if (!name) return;
+
+  myName = name;
+  socket.emit('new-user-joined', myName);
+
+  joinOverlay.style.display = 'none';
+  appEl.style.display = 'flex';
+  messageInput.focus();
+});
 
 function appendMessage({ name, message, time, id }) {
   const div = document.createElement('div');

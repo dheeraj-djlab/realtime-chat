@@ -8,7 +8,20 @@
 </head>
 <body>
 
-  <div class="app">
+  <!-- Join screen shown before entering the chat -->
+  <div class="join-overlay" id="join-overlay">
+    <div class="join-box">
+      <img src="images/logo.jpg" alt="logo" class="join-logo" onerror="this.style.display='none'"/>
+      <h1>ChatSphere</h1>
+      <p>Enter your name to join the live chat</p>
+      <form id="join-form">
+        <input type="text" id="joinNameInp" placeholder="Your name" autocomplete="off" required maxlength="20" />
+        <button type="submit" class="btn">Join Chat</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="app" id="app" style="display:none;">
 
     <!-- Sidebar: online users -->
     <aside class="sidebar">
