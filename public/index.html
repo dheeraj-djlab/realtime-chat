@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatSphere | Real-Time Chat App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Sidebar: online users -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="images/logo.jpg" alt="logo" class="logo" onerror="this.style.display='none'"/>
+        <h1>ChatSphere</h1>
+      </div>
+      <h2 class="online-title">Online — <span id="online-count">0</span></h2>
+      <ul id="online-list" class="online-list"></ul>
+    </aside>
+
+    <!-- Main chat window -->
+    <main class="chat">
+      <header class="chat-header">
+        <h2>Live Chat Room</h2>
+        <span class="status-dot"></span>
+        <span class="status-text">Connected</span>
+      </header>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="typing-indicator" id="typing-indicator"></div>
+
+      <form id="send-container" class="send-container">
+        <input
+          type="text"
+          id="messageInp"
+          placeholder="Type a message..."
+          autocomplete="off"
+        />
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </main>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/client.js"></script>
+</body>
+</html>

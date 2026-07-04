@@ -1,0 +1,19 @@
+{
+  "name": "realtime-chat-app",
+  "version": "1.0.0",
+  "description": "A real-time chat application built with Node.js, Express and Socket.IO featuring live messaging, typing indicators, online user list and join/leave notifications.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Dheeraj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
